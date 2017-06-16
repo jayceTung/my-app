@@ -5,8 +5,6 @@ import LikeButton from "./js/LikeButton"
 import CommentApp from "./js/CommentApp"
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import Hand from "./Hander";
-import Clock from "./Hander";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
@@ -66,40 +64,21 @@ var NotesList = React.createClass({
  //     </NotesList>,
  //     document.getElementById('root')
  // );
- // var data = 123;
+ var data = 123;
  // ReactDOM.render(
  //     <MyTitle title={data}/>,
- //     document.body
+ //     document.getElementById('root')
  // );
 
 class Index extends Component {
-    constructor() {
-        super()
-        this.state = {
-            isShow: false
-        }
-    }
-
-    handleShowAndHide () {
-        this.setState({
-            isShow: !this.state.isShow
-        })
-    }
-
     render() {
         return (
             <div>
-               <div>
-                   {this.state.isShow ? <Clock/> : null}
-                   <button
-                       onClick={this.handleShowAndHide.bind(this)}>
-                       submit
-                   </button>
-               </div>
+                <LikeButton/>
             </div>
         )
     }
 }
 
 
- ReactDOM.render(<Index />, document.body);
+ ReactDOM.render(<CommentApp />, document.body);
